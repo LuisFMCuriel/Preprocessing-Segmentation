@@ -5,7 +5,7 @@ from tifffile import imread, imsave
 
 def watershed(image):
 	image -= int(np.amax(image)*0.05)
-	image = np.clip(image, 0.0, np.amax(image))#image = np.clip(image, 0.0, 255.0)
+	image = image = np.clip(image, 0.0, 255.0)
 	img = np.zeros((image.shape[0], image.shape[1], 3))
 	frame = np.zeros_like(image[:,:])
 	img[:,:,0] = image[:,:]
